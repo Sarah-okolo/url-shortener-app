@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shortly URL shortening</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./url shortener.css" />
+    <link rel="stylesheet" href="https://fonts.google.com/specimen/Poppins" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  </head>
+
+  <body id="body">
+    <header>
+      <img src="./images/logo.svg" alt="company logo" />
+
+      <nav>
+        <img
+          src="images/icon-menu.svg"
+          alt="hamburger menu icon"
+          id="burger-menu-icon"
+          class="menu-open"
+        />
+
+        <div class="mobile-menu">
+          <div id="fpr">
+            <p>Features</p>
+            <p>Pricing</p>
+            <p>Resources</p>
+          </div>
+          <hr />
+
+          <div id="lsu">
+            <p>Login</p>
+            <button id="sign-up">Sign Up</button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div id="top-section">
+        <div id="hero-image-container">
+          <img
+            src="./images/illustration-working.svg"
+            alt="hero image"
+            id="hero-image"
+          />
+        </div>
+
+        <div id="top-section-info">
+          <h1>More than just shorter links</h1>
+          <p class="hero-txt">
+            Build your brand’s recognition and get detailed insights on how your
+            links are performing.
+          </p>
+          <button id="gtstarted">Get Started</button>
+        </div>
+      </div>
+
+      <div id="middle-section">
+        <div id="link-shortener-container">
+          <div>
+            <input
+              type="text"
+              placeholder="shorten a link here..."
+              id="link-input"
+            />
+            <p class="warning-txt">please add a link</p>
+          </div>
+          <button id="shorten-link-btn">Shorten it!</button>
+        </div>
+
+        <div id="delete-confirmation-modal">
+          <div class="delete-confirmation-container">
+            <p>Are You Sure You Want To Delete this Link Card?</p>
+            <div id="confirm-btns-container">
+              <button id="no-delete">Cancel</button
+              ><button id="yes-delete">Delete</button>
+            </div>
+          </div>
+        </div>
+        <p id="waitTxt">Please Wait ...</p>
+        <div class="shortened-links-container"></div>
+
+        <h2>Advanced Statistics</h2>
+        <p class="track">
+          Track how your links are performing across the web with our advanced
+          statistics dashboard.
+        </p>
+      </div>
+
+      <div id="cards-container">
+        <div class="cyan-line"></div>
+
+        <div class="recognision cards">
+          <div class="icons-holder">
+            <img src="./images/icon-brand-recognition.svg" alt="" />
+          </div>
+          <h2>Brand Recognition</h2>
+          <p>
+            Boost your brand recognition with each click. Generic links don’t
+            mean a thing. Branded links help instil confidence in your content.
+          </p>
+        </div>
+
+        <div class="records cards">
+          <div class="icons-holder">
+            <img src="./images/icon-detailed-records.svg" alt="" />
+          </div>
+          <h2>Detailed Records</h2>
+          <p>
+            Gain insights into who is clicking your links. Knowing when and
+            where people engage with your content helps inform better decisions.
+          </p>
+        </div>
+
+        <div class="customisable cards">
+          <div class="icons-holder">
+            <img src="./images/icon-fully-customizable.svg" alt="" />
+          </div>
+          <h2>Fully Customisable</h2>
+          <p>
+            Improve brand awareness and content discoverability through
+            customizable links, supercharging audience engagement.
+          </p>
+        </div>
+      </div>
+
+      <div id="last-section">
+        <div>
+          <h2>Boost your links today</h2>
+          <button>Get Started</button>
+        </div>
+      </div>
+
+      <!--		<div id="noNetwork">
+								<p>No Network</p>
+								<p>Please check your connection</p>
+				</div>-->
+
+      <ion-icon name="arrow-back-outline" class="backToTop"></ion-icon>
+
+      <p id="copied-msg">copied to clipboard</p>
+    </main>
+
+    <footer>
+      <div>
+        <img src="./images/logo.svg" alt="company logo" class="company-logo" />
+      </div>
+
+      <div class="features links">
+        <h3>features</h3>
+        <p>Link Shortening</p>
+        <p>Branded Links</p>
+        <p>Analytics</p>
+      </div>
+
+      <div class="resources links">
+        <h3>resources</h3>
+        <p>Blog</p>
+        <p>Developers</p>
+        <p>Support</p>
+      </div>
+
+      <div class="company links">
+        <h3>company</h3>
+        <p>About</p>
+        <p>Our Team</p>
+        <p>Careers</p>
+        <p>Contact</p>
+      </div>
+
+      <div class="social-links">
+        <div>
+          <img src="./images/icon-facebook.svg" alt="facebook icon" />
+        </div>
+        <div>
+          <img src="./images/icon-twitter.svg" alt="twitter icon" />
+        </div>
+        <div>
+          <img src="./images/icon-pinterest.svg" alt="pinterest icon" />
+        </div>
+        <div>
+          <img src="./images/icon-instagram.svg" alt="Instagram icon" />
+        </div>
+      </div>
+    </footer>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+
+    <script src="url shortener.js" type="text/javascript"></script>
+
+    <!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script> -->
+  </body>
+</html>
