@@ -31,7 +31,7 @@ Users should be able to:
 
 ## Desktop Screenshot
 
-![my solution desktop view](./images/solution desktop preview.png)
+![my solution desktop view](images/solution-desktop-preview.png)
 
 
 ## Links
