@@ -18,7 +18,7 @@ This is a solution to the [Shortly URL shortening API Challenge challenge on Fro
 My task was to build out the responsive landing page project to the designs inside the `/design` folder, and get it looking as close to the design as possible.
 
 
-## The challenge
+### The challenge
 
 Users should be able to:
 
@@ -29,12 +29,11 @@ Users should be able to:
 - Receive an error message when the `form` is submitted if:
   - The `input` field is empty✅
 
-## Desktop Screenshot
+### Desktop Screenshot
 
-![my solution desktop view](images/solution-desktop-preview.png)
+<img src="images/solution-desktop-preview.png" alt="my solution desktop preview">
 
-
-## Links
+### Links
 
 - Solution URL: [Add solution URL here](https://github.com/Sarah-okolo/url-shortener-app)
 - Live Site URL: [Add live site URL here](https://shorten-long-urls.netlify.app/)
@@ -45,13 +44,13 @@ Users should be able to:
 - Styled the document mobile first with CSS
 - Implemented the mobile menu functionality in JS
 - Implemented the API call functionality to shorten links.
-- Handled any API related errors
+- Handled any API-related errors
 - Stored links in local storage to be accessed even after page load
-- Added copy and delete funcitonality to the shortened links
+- Added copy and delete functionality to the shortened links
 - Uploaded project to a git repository
 - Deployed project to live site in Netlify
 
-## Built with
+### Built with
 
 - Semantic HTML5 markup
 - CSS custom properties
@@ -61,9 +60,9 @@ Users should be able to:
 - Vanilla JavaScript 
 - [url shortener service API](https://url-shortener-service.p.rapidapi.com)
 
-## What I learned
+### What I learned
 
-This project made me get a better understanding of how to work with the local storage. It also enhanced my CSS skills, as I had to work with quite a number of properties for the first time. Also getting better at using the JavaScript Async functions for API calls.
+This project gave me a better understanding on how to work with the local storage. It also enhanced my CSS skills, as I had to work with quite several properties for the first time. Also getting better at using the JavaScript Async functions for API calls.
 
 ## Author
 - Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/Sarah-okolo)
