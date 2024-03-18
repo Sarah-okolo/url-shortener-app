@@ -63,86 +63,92 @@ shortenLinkBtn.onclick = (e) => {
     warningTxt.style.display = "block";
     linkInput.style.border = "3px solid var(--red)";
   } else {
+    // checks if the link has previously been shortened
     if (trimmedAllCardsArr.includes(linkInput.value)) {
       warningTxt.style.display = "block";
       linkInput.style.border = "3px solid var(--red)";
       warningTxt.textContent =
-        "This link has previously been shortened and is still available for copy.";
+        "This link has previously been shortened and is still available. Scroll to copy";
 
-      //find link location.
+      //find link card location, highlight it.
       for (let x = 0; x < shortenedLinksContainer.children.length; x++) {
-        findCard = shortenedLinksContainer.children[x].children[0].textContent;
-        console.log(findCard);
+        findCard = shortenedLinksContainer.children[x];
+
+        if (findCard.children[0].textContent.trim() == linkInput.value.trim()) {
+          findCard.style.border = "3px dotted var(--verydarkblue)";
+          break;
+        }
+        findCard.style.border = "none";
       }
     } else {
       waitTxt.style.display = "inline-block";
 
       //fetches Api for shortening link
       const fetchShortenedUrl = async () => {
-        // const endpointurl = 'https://urlbae.com/api/url/add';
-        // const apiKey = 'a4c0204702086f2424b03d769a295bac';
-
-        // // url=${encodeURIComponent(url)}
-        // const options = {
-        //   method: 'POST',
-        //   headers: {
-        //     Authorization: `Bearer ${apiKey}`,
-        //     'Content-Type': 'application/json'
-        //   },
-        //   body: JSON.stringify({
-        //     'url': `${linkInput.value}`,
-        //   })
-        // }
+        const url = "https://url-shortener-service.p.rapidapi.com/shorten";
+        const options = {
+          method: "POST",
+          headers: {
+            "content-type": "application/x-www-form-urlencoded",
+            "X-RapidAPI-Key":
+              "b1e588b3cbmsh3fc752416246cd4p1f6184jsn6ab41aed29d5",
+            "X-RapidAPI-Host": "url-shortener-service.p.rapidapi.com",
+          },
+          body: new URLSearchParams({
+            url: linkInput.value,
+          }),
+        };
 
         try {
-          const res = await fetch(`https://ulvis.net/api.php?url=${linkInput.value}`);
+          // const res = await fetch(`https://ulvis.net/api.php?url=${encodeURIComponent(linkInput.value)}`);
+          const res = await fetch(url, options);
           const data = await res.json();
-          console.log(data);
+          const { result_url } = data;
 
-          // fullShortLink = result.full_short_link;
+          fullShortLink = result_url;
 
-          // var createLinkCards = document.createElement("div");
-          // createLinkCards.setAttribute("class", "shortened-urls");
-          // //createLinkCards.setAttribute("data-aos", "zoom-in");
+          var createLinkCards = document.createElement("div");
+          createLinkCards.setAttribute("class", "shortened-urls");
+          //createLinkCards.setAttribute("data-aos", "zoom-in");
 
-          // let pastedLink = document.createElement("p");
-          // pastedLink.setAttribute("class", "link");
-          // pastedLink.textContent = linkInput.value;
-          // let generatedLink = document.createElement("input");
-          // generatedLink.setAttribute("class", "shortened-link");
-          // generatedLink.setAttribute("readonly", "");
-          // generatedLink.setAttribute("type", "text");
-          // generatedLink.setAttribute("value", fullShortLink);
-          // let deleteBtn = document.createElement("img");
-          // deleteBtn.setAttribute("src", "./images/icon-delete.svg");
-          // deleteBtn.setAttribute("alt", "delete icon");
-          // deleteBtn.setAttribute("class", "delete-icon");
+          let pastedLink = document.createElement("p");
+          pastedLink.setAttribute("class", "link");
+          pastedLink.textContent = linkInput.value;
+          let generatedLink = document.createElement("input");
+          generatedLink.setAttribute("class", "shortened-link");
+          generatedLink.setAttribute("readonly", "");
+          generatedLink.setAttribute("type", "text");
+          generatedLink.setAttribute("value", fullShortLink);
+          let deleteBtn = document.createElement("img");
+          deleteBtn.setAttribute("src", "./images/icon-delete.svg");
+          deleteBtn.setAttribute("alt", "delete icon");
+          deleteBtn.setAttribute("class", "delete-icon");
 
-          // let createCopyBtn = document.createElement("button");
-          // createCopyBtn.textContent = "copy";
-          // createCopyBtn.setAttribute("class", "copy");
-          // pastedLink.append(deleteBtn);
-          // createLinkCards.append(pastedLink);
-          // createLinkCards.append(generatedLink);
-          // createLinkCards.append(createCopyBtn);
-          // shortenedLinksContainer.append(createLinkCards);
+          let createCopyBtn = document.createElement("button");
+          createCopyBtn.textContent = "copy";
+          createCopyBtn.setAttribute("class", "copy");
+          pastedLink.append(deleteBtn);
+          createLinkCards.append(pastedLink);
+          createLinkCards.append(generatedLink);
+          createLinkCards.append(createCopyBtn);
+          shortenedLinksContainer.append(createLinkCards);
 
-          // waitTxt.style.display = "none";
+          waitTxt.style.display = "none";
 
-          // //STORING THE LINKS IN THE LOCAL STORAGE.
-          // inputLinks.push(pastedLink.textContent);
+          //STORING THE LINKS IN THE LOCAL STORAGE.
+          inputLinks.push(pastedLink.textContent);
 
-          // localStorage.setItem("storedInputLinks", JSON.stringify(inputLinks));
+          localStorage.setItem("storedInputLinks", JSON.stringify(inputLinks));
 
-          // linkInput.value = "";
-          // fullShortLinkArr.push(fullShortLink);
+          linkInput.value = "";
+          fullShortLinkArr.push(fullShortLink);
 
-          // localStorage.setItem(
-          //   "storedShortenedLinks",
-          //   JSON.stringify(fullShortLinkArr)
-          // );
+          localStorage.setItem(
+            "storedShortenedLinks",
+            JSON.stringify(fullShortLinkArr)
+          );
         } catch (e) {
-          console.log(e);
+          console.error(e);
           warningTxt.style.display = "block";
           linkInput.style.border = "3px solid var(--red)";
           warningTxt.textContent = e;
