@@ -15,7 +15,7 @@ This is a solution to the [Shortly URL shortening API Challenge challenge on Fro
 
 ## Overview
 
-My task was to build out the responsive landing page project to the designs inside the `/design` folder, and get it looking as close to the design as possible.
+My task was to build out the responsive landing page project to the designs inside the `/design` folder and get it looking as close to the design as possible.
 
 
 ### The challenge
@@ -35,8 +35,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/Sarah-okolo/url-shortener-app)
-- Live Site URL: [Add live site URL here](https://shorten-long-urls.netlify.app/)
+- Solution URL: [url-shortener-app](https://github.com/Sarah-okolo/url-shortener-app)
+- Live Site URL: [shorten-long-urls](https://shorten-long-urls.netlify.app/)
 
 ## My process (in order)
 
@@ -65,4 +65,4 @@ Users should be able to:
 This project gave me a better understanding on how to work with the local storage. It also enhanced my CSS skills, as I had to work with quite several properties for the first time. Also getting better at using the JavaScript Async functions for API calls.
 
 ## Author
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/Sarah-okolo)
+- Frontend Mentor - [@sarah-okolo](https://www.frontendmentor.io/profile/Sarah-okolo)
